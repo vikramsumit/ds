@@ -1,0 +1,2 @@
+opening video from graphics card
+mpv --hwdec=auto 2014.mkv
