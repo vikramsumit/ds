@@ -1,0 +1,8 @@
+PID: 20388 START: 1747314131487992064 :+++++++++++++++NEW COMMAND+++++++++++++++++++ starting new command: init [sid=repo-20250515T130205Z-P00004fa4/repo-20250515T130211Z-P00004fa4]
+
+PID: 20388 START: 1747314131499955456 :git command None ['git', 'config', '--get', 'trace2.eventtarget'] with debug: : git config --get trace2.eventtarget 1>| 2>|
+
+PID: 20388 END: 1747314131502090240 :git command None ['git', 'config', '--get', 'trace2.eventtarget'] with debug: : git config --get trace2.eventtarget 1>| 2>|
+
+PID: 20388 END: 1747314131502240256 :+++++++++++++++NEW COMMAND+++++++++++++++++++ starting new command: init [sid=repo-20250515T130205Z-P00004fa4/repo-20250515T130211Z-P00004fa4]
+
