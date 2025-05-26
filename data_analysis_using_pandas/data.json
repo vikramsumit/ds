@@ -7,9 +7,9 @@
     "name": "Jack",
     "lang": "JavaScript"
   },
-  // {
-  //   "name": "Alice",
-  //   "lang": "Java"
-  // }
+  {
+    "name": "Alice",
+    "lang": "Java"
+  }
  
 ]
