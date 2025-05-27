@@ -3,10 +3,10 @@
     "name": "raju",
     "lang": "Python"
   },
-  // {
-  //   "name": "Jack",
-  //   "lang": "JavaScript"
-  // },
+  {
+    "name": "Jack",
+    "lang": "JavaScript"
+  },
   {
     "name": "Alice",
     "lang": "Java"
