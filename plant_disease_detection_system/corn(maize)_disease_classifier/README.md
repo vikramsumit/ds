@@ -1,20 +1,20 @@
-# 🍎 Apple Disease Classifier
+# 🌽 Corn (Maize) Disease Classifier
 
-A specialized deep learning model for detecting and classifying diseases in apple plants using Convolutional Neural Networks (CNNs). This classifier identifies various fungal and bacterial diseases that commonly affect apple crops.
+A specialized deep learning model for detecting and classifying diseases in corn/maize plants using Convolutional Neural Networks (CNNs). This classifier identifies various fungal diseases that commonly affect corn crops.
 
 ## 📊 Supported Diseases
 
 | Disease | Description | Symptoms |
 |---------|-------------|----------|
-| **Apple Scab** | Fungal disease caused by Venturia inaequalis | Dark, olive-green spots on leaves and fruits, often with velvety texture |
-| **Black Rot** | Fungal disease caused by Botryosphaeria obtusa | Brown to black lesions on leaves, fruit rot, and cankers on branches |
-| **Cedar Apple Rust** | Fungal disease requiring both apple and cedar hosts | Bright orange spots on leaves, yellow-orange lesions on fruit |
-| **Healthy** | No disease present | Normal green leaves and healthy fruit development |
+| **Blight** | Fungal disease affecting leaves | Brown lesions with yellow borders on leaves |
+| **Common Rust** | Fungal disease caused by Puccinia sorghi | Orange to reddish-brown pustules on leaves |
+| **Gray Leaf Spot** | Fungal disease caused by Cercospora zeae-maydis | Rectangular gray lesions with yellow borders |
+| **Healthy** | No disease present | Normal green leaves and healthy plant development |
 
 ## 🏗️ Project Structure
 
 ```
-apple_disease_classifier/
+corn(maize)_disease_classifier/
 ├── data/
 │   ├── Train/                 # Training images organized by disease class
 │   ├── Val/                   # Validation images
@@ -27,7 +27,6 @@ apple_disease_classifier/
 │   └── utils.py               # Utility functions for image processing
 ├── csv/                       # Prediction results and evaluation metrics
 ├── requirements.txt           # Python dependencies
-├── test_plot.png              # Sample prediction visualization
 └── README.md                  # This documentation
 ```
 
@@ -35,7 +34,7 @@ apple_disease_classifier/
 
 ### Installation
 ```bash
-cd apple_disease_classifier
+cd corn\(maize\)_disease_classifier
 pip install -r requirements.txt
 ```
 
@@ -51,41 +50,41 @@ python src/predict.py
 
 ### Single Image Prediction
 ```python
-from src.predict import predict_apple_disease
+from src.predict import predict_corn_disease
 
-result = predict_apple_disease("path/to/apple_image.jpg")
+result = predict_corn_disease("path/to/corn_image.jpg")
 print(f"Disease: {result['disease']}")
 print(f"Confidence: {result['confidence']:.2f}%")
 ```
 
 ## 📈 Performance
 
-- **Test Accuracy**: ~92%
-- **Validation Accuracy**: ~89%
-- **Training Time**: ~20-40 minutes (GPU)
-- **Model Size**: ~50MB per trained model
+- **Test Accuracy**: ~91%
+- **Validation Accuracy**: ~88%
+- **Training Time**: ~25-45 minutes (GPU)
+- **Model Size**: ~48MB per trained model
 
 ## 🔧 Model Details
 
 - **Architecture**: CNN with 4 convolutional blocks
 - **Input Size**: 256x256 RGB images
-- **Output Classes**: 4 (Apple Scab, Black Rot, Cedar Apple Rust, Healthy)
+- **Output Classes**: 4 (Blight, Common Rust, Gray Leaf Spot, Healthy)
 - **Framework**: TensorFlow/Keras
 - **Data Augmentation**: Random flips, rotations, and contrast adjustments
 
 ## 📝 Usage Notes
 
-- Images should be clear, well-lit photos of apple leaves or fruits
+- Images should be clear, well-lit photos of corn leaves
 - Best results with images showing clear disease symptoms
 - Model performs best on images similar to training data
-- For best accuracy, use multiple images of the same plant from different angles
+- Common rust appears as orange pustules, gray leaf spot as rectangular lesions
 
 ## 🤝 Contributing
 
-To improve the apple disease classifier:
+To improve the corn disease classifier:
 1. Add more training images for better accuracy
 2. Fine-tune model hyperparameters
-3. Add support for additional apple diseases
+3. Add support for additional corn diseases
 4. Improve data preprocessing techniques
 
 ---

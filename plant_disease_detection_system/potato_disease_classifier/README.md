@@ -1,20 +1,19 @@
-# 🍎 Apple Disease Classifier
+# 🥔 Potato Disease Classifier
 
-A specialized deep learning model for detecting and classifying diseases in apple plants using Convolutional Neural Networks (CNNs). This classifier identifies various fungal and bacterial diseases that commonly affect apple crops.
+A specialized deep learning model for detecting and classifying diseases in potato plants using Convolutional Neural Networks (CNNs). This classifier identifies various fungal diseases that commonly affect potato crops.
 
 ## 📊 Supported Diseases
 
 | Disease | Description | Symptoms |
 |---------|-------------|----------|
-| **Apple Scab** | Fungal disease caused by Venturia inaequalis | Dark, olive-green spots on leaves and fruits, often with velvety texture |
-| **Black Rot** | Fungal disease caused by Botryosphaeria obtusa | Brown to black lesions on leaves, fruit rot, and cankers on branches |
-| **Cedar Apple Rust** | Fungal disease requiring both apple and cedar hosts | Bright orange spots on leaves, yellow-orange lesions on fruit |
-| **Healthy** | No disease present | Normal green leaves and healthy fruit development |
+| **Early Blight** | Fungal disease caused by Alternaria solani | Dark brown spots with concentric rings on leaves |
+| **Late Blight** | Fungal disease caused by Phytophthora infestans | Water-soaked lesions that turn brown/black, white fungal growth underneath leaves |
+| **Healthy** | No disease present | Normal green leaves and healthy tuber development |
 
 ## 🏗️ Project Structure
 
 ```
-apple_disease_classifier/
+potato_disease_classifier/
 ├── data/
 │   ├── Train/                 # Training images organized by disease class
 │   ├── Val/                   # Validation images
@@ -27,7 +26,6 @@ apple_disease_classifier/
 │   └── utils.py               # Utility functions for image processing
 ├── csv/                       # Prediction results and evaluation metrics
 ├── requirements.txt           # Python dependencies
-├── test_plot.png              # Sample prediction visualization
 └── README.md                  # This documentation
 ```
 
@@ -35,7 +33,7 @@ apple_disease_classifier/
 
 ### Installation
 ```bash
-cd apple_disease_classifier
+cd potato_disease_classifier
 pip install -r requirements.txt
 ```
 
@@ -51,41 +49,41 @@ python src/predict.py
 
 ### Single Image Prediction
 ```python
-from src.predict import predict_apple_disease
+from src.predict import predict_potato_disease
 
-result = predict_apple_disease("path/to/apple_image.jpg")
+result = predict_potato_disease("path/to/potato_image.jpg")
 print(f"Disease: {result['disease']}")
 print(f"Confidence: {result['confidence']:.2f}%")
 ```
 
 ## 📈 Performance
 
-- **Test Accuracy**: ~92%
-- **Validation Accuracy**: ~89%
+- **Test Accuracy**: ~91%
+- **Validation Accuracy**: ~88%
 - **Training Time**: ~20-40 minutes (GPU)
-- **Model Size**: ~50MB per trained model
+- **Model Size**: ~47MB per trained model
 
 ## 🔧 Model Details
 
 - **Architecture**: CNN with 4 convolutional blocks
 - **Input Size**: 256x256 RGB images
-- **Output Classes**: 4 (Apple Scab, Black Rot, Cedar Apple Rust, Healthy)
+- **Output Classes**: 3 (Early Blight, Late Blight, Healthy)
 - **Framework**: TensorFlow/Keras
 - **Data Augmentation**: Random flips, rotations, and contrast adjustments
 
 ## 📝 Usage Notes
 
-- Images should be clear, well-lit photos of apple leaves or fruits
+- Images should be clear, well-lit photos of potato leaves
 - Best results with images showing clear disease symptoms
 - Model performs best on images similar to training data
-- For best accuracy, use multiple images of the same plant from different angles
+- Early blight shows concentric rings, late blight spreads rapidly in humid conditions
 
 ## 🤝 Contributing
 
-To improve the apple disease classifier:
+To improve the potato disease classifier:
 1. Add more training images for better accuracy
 2. Fine-tune model hyperparameters
-3. Add support for additional apple diseases
+3. Add support for additional potato diseases
 4. Improve data preprocessing techniques
 
 ---
