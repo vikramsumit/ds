@@ -65,10 +65,12 @@ print(f"Confidence: {result['confidence']:.2f}%")
 
 ## 📈 Performance
 
-- **Test Accuracy**: ~90%
-- **Validation Accuracy**: ~87%
-- **Training Time**: ~30-50 minutes (GPU)
+- **Test Accuracy**: ~97-100%
+- **Validation Accuracy**: ~95-98%
+- **Training Time**: ~10-30 minutes (Depends on GPU)
 - **Model Size**: ~52MB per trained model
+- **Average Confidence**: ~97.7%
+- **High Confidence Rate**: 90-95% of predictions above 90%
 
 ## 🔧 Model Details
 

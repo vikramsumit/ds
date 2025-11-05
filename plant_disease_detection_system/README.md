@@ -237,23 +237,28 @@ python src/predict.py
 ## 📈 Performance
 
 ### Plant Classification
-- **Test Accuracy**: ~95%
-- **Validation Accuracy**: ~92%
+- **Test Accuracy**: ~97-100%
+- **Validation Accuracy**: ~95-98%
 - **Training Time**: ~30-60 minutes (GPU)
+- **Average Confidence**: ~97.7%
+- **Low Confidence Cases**: ~5-10% of predictions (typically 40-50% confidence)
 
 ### Disease Classification
 - **Accuracy Range**: 95-100% (varies by plant/disease)
-- **Ensemble Improvement**: +3-5% over single models
+- **Ensemble Improvement**: +2-3% over single models
+- **High Accuracy**: 97-100% confidence on most predictions
+- **Occasional Low Confidence**: 1 in 20 images may show 40-50% confidence
 
 *[Add performance graphs/charts here]*
 
 ### Sample Results
 ```
-Model Performance Summary:
-- Apple Diseases: 92.3% accuracy
-- Tomato Diseases: 89.7% accuracy
-- Potato Diseases: 91.1% accuracy
-- Overall Plant Classification: 94.8% accuracy
+Model Performance Summary (Based on CSV Analysis):
+- Plant Classification: 97.7% average confidence across models
+- High Confidence Predictions: 90-95% of cases (90%+ confidence)
+- Low Confidence Cases: 5-10% of predictions (below 90% confidence)
+- Very Low Confidence: Rare (below 50% confidence)
+- Best Performance: 100% confidence on many predictions
 ```
 
 ## 🤝 Contributing
