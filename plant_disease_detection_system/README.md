@@ -239,9 +239,9 @@ python src/predict.py
 ### Plant Classification
 - **Test Accuracy**: ~97-100%
 - **Validation Accuracy**: ~95-98%
-- **Training Time**: ~30-60 minutes (GPU)
+- **Training Time**: ~10-20 minutes (It depends on GPU)
 - **Average Confidence**: ~97.7%
-- **Low Confidence Cases**: ~5-10% of predictions (typically 40-50% confidence)
+- **Low Confidence Cases**: ~1-5% of predictions (typically 40-50% confidence)
 
 ### Disease Classification
 - **Accuracy Range**: 95-100% (varies by plant/disease)
