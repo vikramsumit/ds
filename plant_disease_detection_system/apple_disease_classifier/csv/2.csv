@@ -1,0 +1,15 @@
+model,filepath,actual,predicted,predicted_index,confidence_percent
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/11.JPG,Other_Images,Black Rot,1,97.90518188476562
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/4.JPG,Other_Images,Cedar Apple Rust,2,90.73494720458984
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/7.JPG,Other_Images,Cedar Apple Rust,2,96.82125091552734
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/70190de6-c93f-4b1e-9c6d-19b0b424f42f___FREC_C.Rust 4315_newGRR.JPG,Other_Images,Cedar Apple Rust,2,99.90277099609375
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/848e865c-bdbb-41eb-a4d1-90f1d49d1d74___FREC_C.Rust 0067_new30degFlipTB.JPG,Other_Images,Cedar Apple Rust,2,98.4872055053711
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/a3bfb6c7-1f1e-407a-a2cf-40b316896185___FREC_C.Rust 9819_newGRR.JPG,Other_Images,Cedar Apple Rust,2,99.99578857421875
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/a9c36955-73f5-43d5-9e1e-03672ed95b38___FREC_C.Rust 3893_newGRR.JPG,Other_Images,Cedar Apple Rust,2,98.85889434814453
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/c035251c-a97e-4a3a-afb6-5e465bb23ba1___JR_FrgE.S 2906_270deg.JPG,Other_Images,Black Rot,1,99.93598175048828
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/c8269293-ae8c-4ac0-8eb3-6574683f1b2e___JR_FrgE.S 8699.JPG,Other_Images,Black Rot,1,98.60504150390625
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/d892ca1b-8b68-4087-9bb1-3ac7b861c283___JR_FrgE.S 8606.JPG,Other_Images,Black Rot,1,99.8895263671875
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/d962745e-a8b7-414a-a9f8-f47e945e3be9___JR_FrgE.S 2881_270deg.JPG,Other_Images,Black Rot,1,99.2629623413086
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/f3f1e50a-4e84-4147-b10c-09283a2feddd___JR_FrgE.S 8713_90deg.JPG,Other_Images,Black Rot,1,90.35746765136719
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/f9ec74fa-f27f-4185-a89c-0613319e382b___JR_FrgE.S 8640.JPG,Other_Images,Black Rot,1,99.87589263916016
+best_model.keras,/home/amit/code_only/code/new/apple_disease_classifier/data/Test/Other_Images/h.JPG,Other_Images,Cedar Apple Rust,2,93.22042846679688

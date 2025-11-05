@@ -1,0 +1,19 @@
+model,filepath,actual,predicted,predicted_index,confidence_percent
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/RS_Rust 2016_flipLR.JPG,Other_Images,Common Rust ,1,99.9996566772461
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/RS_Rust 2021.JPG,Other_Images,Common Rust ,1,100.0
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/RS_Rust 2091.JPG,Other_Images,Common Rust ,1,100.0
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/RS_Rust 2151_flipLR.JPG,Other_Images,Common Rust ,1,99.91387176513672
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/c1.JPG,Other_Images,Cercospora Leaf Spot,0,99.99991607666016
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/c2.JPG,Other_Images,Cercospora Leaf Spot,0,100.0
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/c3.jpg,Other_Images,Cercospora Leaf Spot,0,99.96029663085938
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/c4.JPG,Other_Images,Cercospora Leaf Spot,0,99.9999771118164
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/h1.jpg,Other_Images,Healthy,2,99.99996185302734
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/h2.jpg,Other_Images,Healthy,2,99.99864196777344
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/h3.jpg,Other_Images,Healthy,2,99.99934387207031
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/h4.JPG,Other_Images,Healthy,2,99.99993133544922
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/n1.JPG,Other_Images,Northern Leaf Blight,3,99.97200012207031
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/n2.JPG,Other_Images,Northern Leaf Blight,3,99.99989318847656
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/n3.JPG,Other_Images,Northern Leaf Blight,3,99.90040588378906
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/n4.JPG,Other_Images,Northern Leaf Blight,3,99.9994888305664
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/n5.JPG,Other_Images,Northern Leaf Blight,3,99.9972915649414
+3.keras,/home/amit/code_only/code/new/corn(maize)_disease_classifier/data/Test/Other_Images/n6.jpg,Other_Images,Northern Leaf Blight,3,99.97799682617188

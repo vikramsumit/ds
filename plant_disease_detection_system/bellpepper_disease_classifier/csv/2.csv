@@ -1,0 +1,17 @@
+model,filepath,actual,predicted,predicted_index,confidence_percent
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/h1.JPG,Other_Images,Healthy,1,100.0
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/h2.JPG,Other_Images,Healthy,1,99.99929809570312
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/h3.JPG,Other_Images,Healthy,1,99.99983215332031
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/h4.JPG,Other_Images,Healthy,1,99.9737319946289
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/h5.JPG,Other_Images,Healthy,1,99.99972534179688
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/h6.JPG,Other_Images,Healthy,1,99.9999771118164
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/h7.JPG,Other_Images,Healthy,1,99.9998550415039
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/h8.JPG,Other_Images,Healthy,1,99.99762725830078
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/l1.JPG,Other_Images,Bacterial Spot,0,99.88362121582031
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/l2.JPG,Other_Images,Bacterial Spot,0,99.99813842773438
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/l3.JPG,Other_Images,Bacterial Spot,0,100.0
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/l4.JPG,Other_Images,Bacterial Spot,0,99.99979400634766
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/l5.JPG,Other_Images,Bacterial Spot,0,99.97350311279297
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/l6.JPG,Other_Images,Bacterial Spot,0,99.95378112792969
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/l7.JPG,Other_Images,Bacterial Spot,0,99.98444366455078
+best_model.keras,/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images/l8.JPG,Other_Images,Bacterial Spot,0,99.99998474121094

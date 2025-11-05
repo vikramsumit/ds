@@ -1,0 +1,17 @@
+model,filepath,actual,predicted,predicted_index,confidence_percent
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/e1.JPG,Other_Images,Healthy,1,57.76173400878906
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/e2.JPG,Other_Images,Early Blight,0,76.77936553955078
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/e3.JPG,Other_Images,Early Blight,0,71.18196105957031
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/e4.JPG,Other_Images,Early Blight,0,80.23331451416016
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/e5.JPG,Other_Images,Late Blight,2,46.4810905456543
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/e6.JPG,Other_Images,Early Blight,0,97.69519805908203
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/h1.JPG,Other_Images,Healthy,1,99.9085922241211
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/h2.JPG,Other_Images,Healthy,1,98.94499206542969
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/h3.JPG,Other_Images,Healthy,1,99.99559020996094
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/h5.JPG,Other_Images,Healthy,1,99.53353881835938
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/l1.JPG,Other_Images,Late Blight,2,99.7055892944336
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/l2.JPG,Other_Images,Late Blight,2,99.59455108642578
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/l3.JPG,Other_Images,Late Blight,2,99.56953430175781
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/l4..JPG,Other_Images,Late Blight,2,99.6817855834961
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/l5.JPG,Other_Images,Late Blight,2,99.74237823486328
+1.keras,/home/amit/code_only/code/new/potato_disease_classifier/data/Test/Other_Images/l6.JPG,Other_Images,Late Blight,2,99.68592071533203

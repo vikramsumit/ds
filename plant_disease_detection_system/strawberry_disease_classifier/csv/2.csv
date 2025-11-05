@@ -1,0 +1,9 @@
+model,filepath,actual,predicted,predicted_index,confidence_percent
+2.keras,/home/amit/code_only/code/new/strawberry_disease_classifier/data/Test/Other_Images/a845e8b5-bd7a-4438-8936-e3191d2d3ba5___RS_HL 1653_90deg.JPG,Other_Images,Healthy,0,99.99617004394531
+2.keras,/home/amit/code_only/code/new/strawberry_disease_classifier/data/Test/Other_Images/afc77a38-521f-457d-ba97-1547276d1182___RS_HL 4854_new30degFlipLR.JPG,Other_Images,Healthy,0,99.9999771118164
+2.keras,/home/amit/code_only/code/new/strawberry_disease_classifier/data/Test/Other_Images/caa95a07-527a-4ceb-923a-40c717c872b8___RS_HL 1916_180deg.JPG,Other_Images,Healthy,0,99.99909210205078
+2.keras,/home/amit/code_only/code/new/strawberry_disease_classifier/data/Test/Other_Images/cc16d1b1-818c-4a83-a045-5027af514a89___RS_HL 4715_90deg.JPG,Other_Images,Healthy,0,99.99982452392578
+2.keras,/home/amit/code_only/code/new/strawberry_disease_classifier/data/Test/Other_Images/l1.JPG,Other_Images,Leaf Scorch,1,100.0
+2.keras,/home/amit/code_only/code/new/strawberry_disease_classifier/data/Test/Other_Images/l2.JPG,Other_Images,Leaf Scorch,1,99.99998474121094
+2.keras,/home/amit/code_only/code/new/strawberry_disease_classifier/data/Test/Other_Images/l3.JPG,Other_Images,Leaf Scorch,1,100.0
+2.keras,/home/amit/code_only/code/new/strawberry_disease_classifier/data/Test/Other_Images/l4.JPG,Other_Images,Leaf Scorch,1,99.99998474121094
