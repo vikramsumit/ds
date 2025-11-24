@@ -1,4 +1,5 @@
 import os
+import sys
 import gc
 from pathlib import Path
 import tensorflow as tf
@@ -8,21 +9,21 @@ from collections import Counter
 # ===============================
 # CONFIGURATION
 # ===============================
-PLANT_MODELS_DIR = "/home/amit/code_only/code/new/all_data/models"
+PLANT_MODELS_DIR = "../all_data/models"
 PLANT_CLASS_NAMES = ['apple', 'bellpepper', 'cherry', 'corn(maize)', 'grape', 'peach', 'potato', 'strawberry', 'tomato']
 IMAGE_SIZE = (256, 256)
 
 # Disease models directories mapping
 DISEASE_DIRS = {
-    'apple': '/home/amit/code_only/code/new/apple_disease_classifier/models',
-    'bellpepper': '/home/amit/code_only/code/new/bellpepper_disease_classifier/models',
-    'cherry': '/home/amit/code_only/code/new/cherry_disease_classifier/models',
-    'corn(maize)': '/home/amit/code_only/code/new/corn(maize)_disease_classifier/models',
-    'grape': '/home/amit/code_only/code/new/grape_disease_classifier/models',
-    'peach': '/home/amit/code_only/code/new/peach_disease_classifier/models',
-    'potato': '/home/amit/code_only/code/new/potato_disease_classifier/models',
-    'strawberry': '/home/amit/code_only/code/new/strawberry_disease_classifier/models',
-    'tomato': '/home/amit/code_only/code/new/tomato_disease_classifier/models'
+    'apple': '../apple_disease_classifier/models',
+    'bellpepper': '../bellpepper_disease_classifier/models',
+    'cherry': '../cherry_disease_classifier/models',
+    'corn(maize)': '../corn(maize)_disease_classifier/models',
+    'grape': '../grape_disease_classifier/models',
+    'peach': '../peach_disease_classifier/models',
+    'potato': '../potato_disease_classifier/models',
+    'strawberry': '../strawberry_disease_classifier/models',
+    'tomato': '../tomato_disease_classifier/models'
 }
 
 # Disease class names (assuming similar structure; can be customized per plant if needed)
@@ -68,16 +69,29 @@ def predict_plant(image_path, models_dir, class_names, image_size=(256, 256)):
     best_pred = None
     best_model_name = None
 
-    for model_file in sorted(models_dir.glob("*.keras")):
-        model = tf.keras.models.load_model(str(model_file))
-        pred_idx, conf, preds = predict_image(model, image_path, image_size=image_size)
-        if conf > best_conf:
-            best_conf = conf
-            best_pred = class_names[pred_idx] if pred_idx < len(class_names) else str(pred_idx)
-            best_model_name = model_file.name
-        tf.keras.backend.clear_session()
-        del model
-        gc.collect()
+    if not models_dir.exists():
+        print(f"Models directory not found: {models_dir}")
+        return "None", 0.0, None
+
+    model_files = list(models_dir.glob("*.keras"))
+    if not model_files:
+        print(f"No .keras models found in {models_dir}")
+        return "None", 0.0, None
+
+    for model_file in sorted(model_files):
+        try:
+            model = tf.keras.models.load_model(str(model_file))
+            pred_idx, conf, preds = predict_image(model, image_path, image_size=image_size)
+            if conf > best_conf:
+                best_conf = conf
+                best_pred = class_names[pred_idx] if pred_idx < len(class_names) else str(pred_idx)
+                best_model_name = model_file.name
+            tf.keras.backend.clear_session()
+            del model
+            gc.collect()
+        except Exception as e:
+            print(f"Error loading model {model_file}: {e}")
+            continue
 
     return best_pred, best_conf, best_model_name
 
@@ -159,35 +173,16 @@ def combined_predict(image_path):
 # MAIN EXECUTION
 # ===============================
 if __name__ == "__main__":
-    # Example usage: Replace with actual image path
-    image_path = "/home/amit/code_only/code/new/all_data/data/Test/Other_Images/tomato_lateblight_2.JPG"
-    if os.path.exists(image_path):
-        result = combined_predict(image_path)
-        print("\n📊 Final Result:")
-        print(f"Plant: {result['plant']} ({result['plant_confidence']:.2f}%)")
-        print(f"Disease: {result['disease']} ({result['disease_confidence']:.2f}%)")
-    else:
-        print(f"❌ Image not found: {image_path}")
-        print("Please update the image_path variable in the script.")
+    if len(sys.argv) < 2:
+        print("Error: No image path provided")
+        sys.exit(1)
 
-    # Additional test with another image
-    print("\n" + "="*50)
-    image_path2 = "/home/amit/code_only/code/new/all_data/data/Test/Other_Images/berry_leafscorch.JPG"
-    if os.path.exists(image_path2):
-        result2 = combined_predict(image_path2)
-        print("\n📊 Final Result for second image:")
-        print(f"Plant: {result2['plant']} ({result2['plant_confidence']:.2f}%)")
-        print(f"Disease: {result2['disease']} ({result2['disease_confidence']:.2f}%)")
-    else:
-        print(f"❌ Second image not found: {image_path2}")
+    image_path = sys.argv[1]
+    if not os.path.exists(image_path):
+        print(f"Error: Image not found: {image_path}")
+        sys.exit(1)
 
-    # Additional test with another image
-    print("\n" + "="*50)
-    image_path2 = "/home/amit/code_only/code/new/all_data/data/Test/Other_Images/peach_bacterial_5.JPG"
-    if os.path.exists(image_path2):
-        result2 = combined_predict(image_path2)
-        print("\n📊 Final Result for second image:")
-        print(f"Plant: {result2['plant']} ({result2['plant_confidence']:.2f}%)")
-        print(f"Disease: {result2['disease']} ({result2['disease_confidence']:.2f}%)")
-    else:
-        print(f"❌ Second image not found: {image_path2}")
+    result = combined_predict(image_path)
+    print("Final Result:")
+    print(f"Plant: {result['plant']} ({result['plant_confidence']:.2f}%)")
+    print(f"Disease: {result['disease']} ({result['disease_confidence']:.2f}%)")

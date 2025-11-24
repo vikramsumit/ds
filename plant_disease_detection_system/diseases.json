@@ -1,0 +1,162 @@
+{
+  "apple_Apple Scab": {
+    "summary": "Apple scab is a fungal disease that causes dark, scabby lesions on leaves, fruit, and twigs. It spreads through spores and thrives in wet conditions.",
+    "cure": "Apply fungicides like captan or myclobutanil at bud break and repeat every 10-14 days during wet weather. Prune infected branches and remove fallen leaves.",
+    "prevention": "Plant resistant varieties, ensure good air circulation, avoid overhead watering, and clean up fallen leaves and fruit in fall."
+  },
+  "apple_Black Rot": {
+    "summary": "Black rot is a fungal disease affecting apples, causing fruit rot, leaf spots, and cankers on branches.",
+    "cure": "Remove and destroy infected fruit, leaves, and branches. Apply fungicides during bloom and petal fall.",
+    "prevention": "Prune trees to improve air circulation, avoid wounding trees, and apply dormant sprays in winter."
+  },
+  "apple_Cedar Apple Rust": {
+    "summary": "Cedar apple rust is a fungal disease that requires both apple and cedar trees to complete its life cycle, causing orange spots on leaves and fruit.",
+    "cure": "Apply fungicides at green tip and petal fall stages. Remove nearby cedar trees if possible.",
+    "prevention": "Plant rust-resistant apple varieties and maintain distance from cedar trees."
+  },
+  "apple_Healthy": {
+    "summary": "The plant appears healthy with no visible signs of disease.",
+    "cure": "No treatment needed.",
+    "prevention": "Continue good cultural practices like proper watering, fertilization, and pruning."
+  },
+  "bellpepper_Bacterial Spot": {
+    "summary": "Bacterial spot causes small, water-soaked spots on leaves, stems, and fruit that turn brown and scabby.",
+    "cure": "Use copper-based bactericides. Avoid overhead watering and handle plants carefully to prevent spread.",
+    "prevention": "Rotate crops, use disease-free seeds, and avoid working with wet plants."
+  },
+  "bellpepper_Healthy": {
+    "summary": "The plant appears healthy with no visible signs of disease.",
+    "cure": "No treatment needed.",
+    "prevention": "Continue good cultural practices like proper watering, fertilization, and pruning."
+  },
+  "cherry_Healthy": {
+    "summary": "The plant appears healthy with no visible signs of disease.",
+    "cure": "No treatment needed.",
+    "prevention": "Continue good cultural practices like proper watering, fertilization, and pruning."
+  },
+  "cherry_Powdery Mildew": {
+    "summary": "Powdery mildew appears as white, powdery spots on leaves, stems, and fruit.",
+    "cure": "Apply sulfur-based fungicides or neem oil. Improve air circulation by pruning.",
+    "prevention": "Avoid overhead watering, plant in sunny locations, and space plants properly."
+  },
+  "corn(maize)_Blight": {
+    "summary": "Corn blight causes grayish lesions on leaves that can lead to significant yield loss.",
+    "cure": "Apply fungicides like azoxystrobin or propiconazole at tasseling and repeat as needed.",
+    "prevention": "Rotate crops, plant resistant varieties, and avoid overhead irrigation."
+  },
+  "corn(maize)_Common Rust": {
+    "summary": "Common rust appears as reddish-brown pustules on leaves, reducing photosynthesis.",
+    "cure": "Apply fungicides if infection is severe. Remove and destroy infected leaves.",
+    "prevention": "Plant resistant varieties and ensure proper plant spacing for air circulation."
+  },
+  "corn(maize)_Gray Leaf Spot": {
+    "summary": "Gray leaf spot causes rectangular lesions on leaves, leading to premature leaf death.",
+    "cure": "Use fungicides like strobilurins or triazoles. Rotate crops and till under crop residues.",
+    "prevention": "Plant resistant hybrids and avoid planting corn in the same field consecutively."
+  },
+  "corn(maize)_Healthy": {
+    "summary": "The plant appears healthy with no visible signs of disease.",
+    "cure": "No treatment needed.",
+    "prevention": "Continue good cultural practices like proper watering, fertilization, and pruning."
+  },
+  "grape_Black Measles": {
+    "summary": "Black measles causes dark spots on grape leaves and fruit, affecting quality.",
+    "cure": "Apply fungicides like mancozeb or copper sulfate. Prune infected parts.",
+    "prevention": "Ensure good air circulation, avoid overhead watering, and remove fallen leaves."
+  },
+  "grape_Black Rot": {
+    "summary": "Black rot affects leaves, stems, and fruit with black lesions and fruit rot.",
+    "cure": "Use fungicides during bloom and veraison. Remove and destroy infected plant parts.",
+    "prevention": "Prune for air circulation, avoid wounding vines, and apply dormant sprays."
+  },
+  "grape_Healthy": {
+    "summary": "The plant appears healthy with no visible signs of disease.",
+    "cure": "No treatment needed.",
+    "prevention": "Continue good cultural practices like proper watering, fertilization, and pruning."
+  },
+  "peach_Bacterial Spot": {
+    "summary": "Bacterial spot causes small, dark spots on leaves and fruit, leading to defoliation.",
+    "cure": "Apply copper-based bactericides. Avoid overhead irrigation.",
+    "prevention": "Plant resistant varieties, prune for air flow, and avoid working with wet plants."
+  },
+  "peach_Healthy": {
+    "summary": "The plant appears healthy with no visible signs of disease.",
+    "cure": "No treatment needed.",
+    "prevention": "Continue good cultural practices like proper watering, fertilization, and pruning."
+  },
+  "potato_Early Blight": {
+    "summary": "Early blight causes dark spots with concentric rings on leaves, leading to defoliation.",
+    "cure": "Apply fungicides like chlorothalonil. Remove infected leaves and avoid overhead watering.",
+    "prevention": "Rotate crops, plant resistant varieties, and mulch to prevent soil splash."
+  },
+  "potato_Healthy": {
+    "summary": "The plant appears healthy with no visible signs of disease.",
+    "cure": "No treatment needed.",
+    "prevention": "Continue good cultural practices like proper watering, fertilization, and pruning."
+  },
+  "potato_Late Blight": {
+    "summary": "Late blight causes water-soaked lesions on leaves and tubers, rapidly destroying crops.",
+    "cure": "Apply fungicides immediately. Remove and destroy infected plants. Use resistant varieties.",
+    "prevention": "Avoid overhead watering, ensure good drainage, and rotate crops."
+  },
+  "strawberry_Healthy": {
+    "summary": "The plant appears healthy with no visible signs of disease.",
+    "cure": "No treatment needed.",
+    "prevention": "Continue good cultural practices like proper watering, fertilization, and pruning."
+  },
+  "strawberry_Leaf Scorch": {
+    "summary": "Leaf scorch causes browning of leaf edges, often due to environmental stress or disease.",
+    "cure": "Improve watering practices, ensure proper fertilization. Remove affected leaves.",
+    "prevention": "Plant in well-drained soil, mulch to retain moisture, and avoid drought stress."
+  },
+  "tomato_Bacterial Spot": {
+    "summary": "Bacterial spot causes small, dark spots on leaves and fruit with yellow halos.",
+    "cure": "Use copper-based bactericides. Avoid overhead watering and handle plants gently.",
+    "prevention": "Rotate crops, use disease-free seeds, and avoid wet foliage."
+  },
+  "tomato_Early Blight": {
+    "summary": "Early blight causes target-like spots on leaves, leading to defoliation.",
+    "cure": "Apply fungicides like copper or chlorothalonil. Remove lower infected leaves.",
+    "prevention": "Mulch around plants, water at soil level, and rotate crops."
+  },
+  "tomato_Healthy": {
+    "summary": "The plant appears healthy with no visible signs of disease.",
+    "cure": "No treatment needed.",
+    "prevention": "Continue good cultural practices like proper watering, fertilization, and pruning."
+  },
+  "tomato_Late Blight": {
+    "summary": "Late blight causes dark, water-soaked lesions on leaves and fruit, spreading rapidly.",
+    "cure": "Apply fungicides like mancozeb immediately. Remove and destroy infected plants.",
+    "prevention": "Ensure good air circulation, avoid overhead watering, and use resistant varieties."
+  },
+  "tomato_Leaf Mold": {
+    "summary": "Leaf mold causes yellow spots on upper leaves and mold on lower surfaces.",
+    "cure": "Improve ventilation, reduce humidity. Apply fungicides if necessary.",
+    "prevention": "Space plants properly, avoid overhead watering, and prune for air flow."
+  },
+  "tomato_Septoria Leaf Spot": {
+    "summary": "Septoria leaf spot causes small, circular spots with dark borders on leaves.",
+    "cure": "Apply fungicides like chlorothalonil. Remove infected leaves.",
+    "prevention": "Rotate crops, avoid overhead watering, and mulch to prevent soil splash."
+  },
+  "tomato_Spider Mites": {
+    "summary": "Spider mites cause stippling and webbing on leaves, weakening plants.",
+    "cure": "Use insecticidal soap or neem oil. Increase humidity and wash plants.",
+    "prevention": "Keep plants well-watered, avoid dusty conditions, and introduce beneficial insects."
+  },
+  "tomato_Target Spot": {
+    "summary": "Target spot causes concentric ring lesions on leaves and fruit.",
+    "cure": "Apply fungicides. Remove infected plant parts.",
+    "prevention": "Improve air circulation, avoid wet foliage, and rotate crops."
+  },
+  "tomato_Tomato Mosaic Virus": {
+    "summary": "TMV causes mottled leaves, stunted growth, and distorted fruit.",
+    "cure": "Remove and destroy infected plants. No chemical cure available.",
+    "prevention": "Use virus-free seeds, disinfect tools, and control aphids that spread the virus."
+  },
+  "tomato_Tomato Yellow Leaf Curl Virus": {
+    "summary": "TYLCV causes yellowing and curling of leaves, stunted growth.",
+    "cure": "Remove infected plants. Use insecticides to control whiteflies.",
+    "prevention": "Use resistant varieties, control whitefly vectors, and avoid planting near infected areas."
+  }
+}
