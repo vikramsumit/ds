@@ -44,28 +44,28 @@ Plant diseases pose a significant threat to global food security, causing substa
 
 ```
 plant_disease_detection_system/
-├── combined_predict.py              # Unified predictor for plant + disease classification
-├── README.md                        # Project documentation
-├── all_data/                        # Combined data and models
+├── combined_predict.py              
+├── README.md                        
+├── all_data/                        
 │   ├── data/                        # Training/validation/test datasets
 │   ├── models/                      # Trained plant classification models
 │   ├── notebooks/
-│   │   └── model_training.ipynb     # Plant classification training notebook
+│   │   └── model_training.ipynb     
 │   ├── src/
-│   │   ├── predict.py               # Batch prediction script
-│   │   ├── top.py                   # Model evaluation script
-│   │   ├── data_loader.py           # Data loading utilities
+│   │   ├── predict.py               
+│   │   ├── top.py                   
+│   │   ├── data_loader.py           
 │   │   └── csv_maker.py             # CSV generation utilities
 │   └── csv/                         # Prediction result CSVs
-├── apple_disease_classifier/        # Apple-specific classifier
-├── bellpepper_disease_classifier/   # Bell pepper classifier
-├── cherry_disease_classifier/       # Cherry classifier
-├── corn(maize)_disease_classifier/  # Corn classifier
-├── grape_disease_classifier/        # Grape classifier
-├── peach_disease_classifier/        # Peach classifier
-├── potato_disease_classifier/       # Potato classifier
-├── strawberry_disease_classifier/   # Strawberry classifier
-└── tomato_disease_classifier/       # Tomato classifier
+├── apple_disease_classifier/        
+├── bellpepper_disease_classifier/   
+├── cherry_disease_classifier/       
+├── corn(maize)_disease_classifier/  
+├── grape_disease_classifier/        
+├── peach_disease_classifier/        
+├── potato_disease_classifier/       
+├── strawberry_disease_classifier/   
+└── tomato_disease_classifier/       
 ```
 
 *[Add project structure diagram here]*
@@ -73,12 +73,12 @@ plant_disease_detection_system/
 Each plant classifier follows a similar structure:
 ```
 plant_disease_classifier/
-├── data/                    # Plant-specific image datasets
-├── models/                  # Trained disease classification models
-├── notebooks/               # Training notebooks
-├── src/                     # Prediction and utility scripts
-├── csv/                     # Prediction results
-├── requirements.txt         # Dependencies
+├── data/                    
+├── models/                  
+├── notebooks/               
+├── src/                     
+├── csv/                     
+├── requirements.txt         
 └── README.md               # Plant-specific documentation
 ```
 
@@ -277,10 +277,6 @@ We welcome contributions! Please follow these steps:
 3. Update `combined_predict.py` with new plant and diseases
 4. Add training data and train models
 5. Update this README
-
-## 📄 License
-
-<!-- This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. -->
 
 ---
 

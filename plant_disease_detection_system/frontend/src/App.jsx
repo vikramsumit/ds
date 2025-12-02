@@ -60,7 +60,7 @@ function App() {
                     </ul>
                     <div className="mt-8">
                       <a
-                        href="https://github.com"
+                        href="https://github.com/vikramsumit/ds/tree/main/plant_disease_detection_system"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-gray-800 text-white px-6 py-3 rounded-lg hover:bg-gray-900 transition-colors"

@@ -16,19 +16,19 @@ A specialized deep learning model for detecting and classifying diseases in appl
 ```
 apple_disease_classifier/
 ├── data/
-│   ├── Train/                 # Training images organized by disease class
-│   ├── Val/                   # Validation images
-│   └── Test/                  # Test images
-├── models/                    # Trained CNN models (.keras files)
+│   ├── Train/                 
+│   ├── Val/                   
+│   └── Test/                  
+├── models/                    
 ├── notebooks/
-│   └── model_training.ipynb   # Jupyter notebook for training the model
+│   └── model_training.ipynb   
 ├── src/
-│   ├── predict.py             # Script for making predictions on new images
-│   └── utils.py               # Utility functions for image processing
-├── csv/                       # Prediction results and evaluation metrics
-├── requirements.txt           # Python dependencies
-├── test_plot.png              # Sample prediction visualization
-└── README.md                  # This documentation
+│   ├── predict.py             
+│   └── utils.py               
+├── csv/                       
+├── requirements.txt           
+├── test_plot.png              
+└── README.md                  
 ```
 
 ## 🚀 Quick Start
@@ -92,4 +92,4 @@ To improve the apple disease classifier:
 
 ---
 
-*Part of the Plant Disease Detection System*
+*Part of the Plant_Disease_Detection_System*
