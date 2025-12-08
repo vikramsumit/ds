@@ -29,3 +29,32 @@ housing_labels = housing["median_house_value"].copy()
 housing = housing.drop("median_house_value", axis=1)
 
 print(housing, housing_labels)
+
+# 4. Separate numerical and categorical columns
+num_attribs = housing.drop("ocean_proximity", axis=1).columns.tolist()
+cat_attribs = ["ocean_proximity"]
+
+# 5. Pipelines
+# Numerical pipeline
+num_pipeline = Pipeline([
+    ("imputer", SimpleImputer(strategy="median")),
+    ("scaler", StandardScaler()),
+])
+ 
+# Categorical pipeline
+cat_pipeline = Pipeline([
+    # ("ordinal", OrdinalEncoder())  # Use this if you prefer ordinal encoding
+    ("onehot", OneHotEncoder(handle_unknown="ignore"))
+])
+ 
+# Full pipeline
+full_pipeline = ColumnTransformer([
+    ("num", num_pipeline, num_attribs),
+    ("cat", cat_pipeline, cat_attribs),
+])
+
+# 6. Transform the data
+housing_prepared = full_pipeline.fit_transform(housing)
+ 
+# housing_prepared is now a NumPy array ready for training
+print(housing_prepared.shape)
