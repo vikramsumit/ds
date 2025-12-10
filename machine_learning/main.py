@@ -79,7 +79,7 @@ print(pd.Series(lin_rmses).describe())
 dec_reg = DecisionTreeRegressor()
 dec_reg.fit(housing_prepared, housing_labels)
 dec_preds = dec_reg.predict(housing_prepared)
-dec_rmse = root_mean_squared_error(housing_labels, dec_preds)
+# dec_rmse = root_mean_squared_error(housing_labels, dec_preds)
 dec_rmses = -cross_val_score(dec_reg, housing_prepared, housing_labels, scoring="neg_root_mean_squared_error", cv=10)
 
 # print(f"The root mean squared error for Decision Tree is {dec_rmses}")
