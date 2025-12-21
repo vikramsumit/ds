@@ -7,9 +7,9 @@ import pandas as pd
 # ===============================
 # CONFIGURATION
 # ===============================
-MODELS_DIR = "/home/amit/code_only/code/new/bellpepper_disease_classifier/models"
-TEST_DIR = "/home/amit/code_only/code/new/bellpepper_disease_classifier/data/Test/Other_Images"
-CSV_OUTPUT_DIR = "/home/amit/code_only/code/new/bellpepper_disease_classifier/csv"
+MODELS_DIR = "/home/raju/code only/ds/plant_disease_detection_system/bellpepper_disease_classifier/models"
+TEST_DIR = "/home/raju/code only/ds/plant_disease_detection_system/bellpepper_disease_classifier/data/Test/Other_Images"
+CSV_OUTPUT_DIR = "/home/raju/code only/ds/plant_disease_detection_system/bellpepper_disease_classifier/csv"
 IMAGE_SIZE = (256, 256)
 
 # ✅ Hardcoded class names
