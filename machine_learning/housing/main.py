@@ -24,8 +24,8 @@ housing["income_cat"] = pd.cut(
  
 split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
 for train_index, test_index in split.split(housing, housing["income_cat"]):
-    strat_train_set = housing.loc[train_index].drop("income_cat", axis=1)
-    strat_test_set = housing.loc[test_index].drop("income_cat", axis=1)
+    strat_train_set = housing.loc[train_index].drop("income_cat", axis=1) # we will work on this data
+    strat_test_set = housing.loc[test_index].drop("income_cat", axis=1) #set aside the test data
 
 # Work on a copy of training data
 housing = strat_train_set.copy()
