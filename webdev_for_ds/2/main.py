@@ -19,11 +19,11 @@ def home():
         subject = request.form.get("subject")
         message = request.form.get("message")
 
-        print(full_name, email, phone, subject, message)
+        print(f"name is : {full_name}\nemail is: {email}\nphone number is: {phone}\nsubject is: {subject}\ngiven msg: {message}")
 
         return "Form Submitted Successfully!"
 
-    return render_template("contact.html")
+    return render_template("form.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
