@@ -6,7 +6,7 @@
 # def hello_world():
 #     return "<p>Hello, World!</p>"
 
-# from flask import Flask, request, render_template
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
