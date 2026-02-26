@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Basic Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+        }
+        main {
+            padding: 2rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My {{name}} Website</h1>
+    <h1>He is a {{lang}} developer</h1>
+</header>
+
+<main>
+    <p>This is a simple HTML page.</p>
+    <button onclick="showMessage()">Click Me</button>
+</main>
+
+{% for item in lucky %}
+    <p>{{item}}</p>
+{% endfor %}
+
+{{footer | safe}}
+
+<footer>
+    <p>&copy; 2026 My Website</p>
+</footer>
+
+<script>
+    function showMessage() {
+        alert("Hello! You clicked the button.");
+    }
+</script>
+
+</body>
+</html>
