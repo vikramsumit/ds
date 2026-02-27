@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact - My Website {% endblock %}
+
+{% block content %}
+<div style="text-align: center; padding: 40px 20px;">
+    <h1 style="color: #667eea; font-size: 48px; margin-bottom: 20px;">Contact Us</h1>
+    <p style="font-size: 18px; color: #666; margin-bottom: 40px;">
+        We'd love to hear from you! Get in touch with us.
+    </p>
+    
+    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-bottom: 40px;">
+        <div style="background: white; padding: 30px; border-radius: 15px; 
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 280px;">
+            <div style="font-size: 40px; margin-bottom: 15px;">📧</div>
+            <h3 style="color: #667eea; margin-bottom: 10px;">Email</h3>
+            <p style="color: #666;">contact@mywebsite.com</p>
+        </div>
+        
+        <div style="background: white; padding: 30px; border-radius: 15px; 
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 280px;">
+            <div style="font-size: 40px; margin-bottom: 15px;">📍</div>
+            <h3 style="color: #667eea; margin-bottom: 10px;">Location</h3>
+            <p style="color: #666;">123 Web Dev Street<br>Internet City, Web 404</p>
+        </div>
+        
+        <div style="background: white; padding: 30px; border-radius: 15px; 
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 280px;">
+            <div style="font-size: 40px; margin-bottom: 15px;">📱</div>
+            <h3 style="color: #667eea; margin-bottom: 10px;">Phone</h3>
+            <p style="color: #666;">+1 234 567 890</p>
+        </div>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                color: white; padding: 40px; border-radius: 15px; max-width: 600px; margin: 0 auto;">
+        <h2 style="margin-bottom: 20px;">Follow Us</h2>
+        <p style="margin-bottom: 20px;">Stay connected with us on social media:</p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <a href="http://youtube.com" target="_blank" 
+               style="background: white; color: #667eea; padding: 12px 25px; 
+                      border-radius: 25px; text-decoration: none; font-weight: bold;">
+                YouTube
+            </a>
+            <a href="#" style="background: white; color: #667eea; padding: 12px 25px; 
+                      border-radius: 25px; text-decoration: none; font-weight: bold;">
+                GitHub
+            </a>
+            <a href="#" style="background: white; color: #667eea; padding: 12px 25px; 
+                      border-radius: 25px; text-decoration: none; font-weight: bold;">
+                Twitter
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

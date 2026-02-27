@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Home - My Website {% endblock %}
+
+{% block content %}
+<div style="text-align: center; padding: 40px 20px;">
+    <h1 style="color: #667eea; font-size: 56px; margin-bottom: 20px; font-weight: bold;">
+        Welcome to My Website! 🎉
+    </h1>
+    <p style="font-size: 20px; color: #666; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        This is my Home Page - A modern Flask web application with beautiful design
+    </p>
+    
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;">
+        <a href="/" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                   color: white; padding: 15px 30px; border-radius: 25px; 
+                   text-decoration: none; font-size: 16px; font-weight: bold;
+                   box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);">
+            🏠 Home
+        </a>
+        <a href="/about" style="background: white; color: #667eea; padding: 15px 30px; 
+                   border-radius: 25px; text-decoration: none; font-size: 16px; 
+                   font-weight: bold; border: 2px solid #667eea;">
+            📖 About
+        </a>
+        <a href="/contact" style="background: white; color: #667eea; padding: 15px 30px; 
+                   border-radius: 25px; text-decoration: none; font-size: 16px; 
+                   font-weight: bold; border: 2px solid #667eea;">
+            📞 Contact
+        </a>
+    </div>
+    
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                color: white; padding: 40px; border-radius: 15px; max-width: 700px; margin: 0 auto;">
+        <h2 style="margin-bottom: 15px;">🚀 Features</h2>
+        <ul style="list-style: none; text-align: left; display: inline-block;">
+            <li style="margin: 10px 0;">✓ Beautiful gradient navbar</li>
+            <li style="margin: 10px 0;">✓ Responsive footer with links</li>
+            <li style="margin: 10px 0;">✓ Flask template inheritance</li>
+            <li style="margin: 10px 0;">✓ Multiple pages (Home, About, Contact)</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
