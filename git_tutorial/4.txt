@@ -1,0 +1,10 @@
+Recovery & advanced commands
+
+- Stash work: git stash save "message"  and git stash pop
+- Undo last commit (keep changes): git reset --soft HEAD~1
+- Revert a commit (safe for shared history): git revert <commit>
+- Recover lost refs: git reflog
+- Find regressions: git bisect
+- Pick a single commit: git cherry-pick <commit>
+
+Tip: prefer revert for public branches; reset is for local cleanup.

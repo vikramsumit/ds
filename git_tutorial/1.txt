@@ -1,0 +1,11 @@
+Git basics
+
+- Initialize a repo: git init
+- Clone a remote repo: git clone <repo-url>
+- Check status: git status
+- Stage changes: git add <file>  (or git add -A)
+- Commit staged changes: git commit -m "Short, imperative message"
+- View history: git log --oneline --graph --decorate
+- Push to remote: git push    and fetch: git fetch
+
+Tip: run git help <command> for full docs.

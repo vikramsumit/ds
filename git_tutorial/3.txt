@@ -1,0 +1,9 @@
+Commit messages & best practices
+
+- Keep commits atomic: one logical change per commit
+- Write subject in imperative mood: "Add user login"
+- Include body for why, not just what
+- Reference issue IDs: "Fixes #123"
+- Use git add -p to craft precise commits
+
+Tip: good commit history makes bisecting and review much easier.

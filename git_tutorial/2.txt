@@ -1,0 +1,9 @@
+Branching & workflows
+
+- Create a branch: git branch feature/name  or git checkout -b feature/name
+- Switch branches: git checkout <branch>  or git switch <branch>
+- Merge: git merge <branch>  (creates merge commit)
+- Rebase: git rebase <base-branch>  (rewrites history, use with care)
+- Common workflows: feature-branch + pull request, GitFlow, trunk-based
+
+Tip: prefer small, focused branches and open PRs for review.

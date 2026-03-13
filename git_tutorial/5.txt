@@ -1,0 +1,10 @@
+Config, ignore, and maintenance
+
+- Global config: git config --global user.name "Name"; git config --global user.email you@example.com
+- Ignore files: create .gitignore with patterns to exclude build/artifacts
+- Hooks: use .git/hooks or shared hook scripts for checks
+- Large files: use Git LFS for big binaries
+- Submodules: use sparingly; prefer subtrees or separate repos
+- Security: don't commit secrets; use git-secrets or pre-commit hooks
+
+Tip: run periodic maintenance: git gc --auto
