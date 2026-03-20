@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en" class="light">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wellbeing Reflection Desk</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Lora', 'Georgia', 'serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Lora', Georgia, serif;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image:
+                linear-gradient(rgba(120, 90, 50, .035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(120, 90, 50, .035) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            transition: background-color .25s ease, border-color .25s ease, color .15s ease;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            transition: none;
+        }
+
+        textarea:focus,
+        input:focus,
+        select:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(180, 140, 70, .18);
+        }
+
+        .dark textarea:focus,
+        .dark input:focus,
+        .dark select:focus {
+            box-shadow: 0 0 0 3px rgba(214, 181, 112, .18);
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #b79a6b;
+            border-radius: 99px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background: #6f5a3f;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen relative
+             bg-gradient-to-br from-stone-50 via-amber-50/60 to-stone-100
+             text-stone-800
+             dark:bg-gradient-to-br dark:from-stone-950 dark:via-stone-900 dark:to-stone-800
+             dark:text-stone-100">
+
+    <header class="sticky top-0 z-50 backdrop-blur-md border-b
+                 bg-white/75 border-stone-200/80
+                 dark:bg-stone-900/85 dark:border-stone-700/60">
+        <div class="max-w-6xl mx-auto px-5 h-14 flex items-center justify-end">
+            <button id="theme-toggle" aria-label="Toggle theme" class="ml-1 w-9 h-9 rounded-full grid place-items-center border cursor-pointer
+               bg-stone-50 hover:bg-stone-100 border-stone-200
+               dark:bg-stone-800 dark:hover:bg-stone-700 dark:border-stone-600
+               text-stone-600 dark:text-stone-200">
+                <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+                <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" stroke-width="2"
+                    viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5" />
+                    <path
+                        d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-5 py-10 relative z-10 space-y-7">
+
+        <!-- ══ HERO ══ -->
+        <section class="relative overflow-hidden rounded-2xl p-8 sm:p-10 border shadow-lg
+            bg-white/80 border-stone-200 shadow-stone-900/5
+            dark:bg-stone-900/55 dark:border-stone-700/60 dark:shadow-black/20">
+            <!-- Blobs -->
+            <div class="pointer-events-none absolute -top-16 -right-16 w-64 h-64 rounded-full blur-3xl
+                  bg-amber-200/30 dark:bg-amber-700/10"></div>
+            <div class="pointer-events-none absolute -bottom-10 left-1/3 w-48 h-48 rounded-full blur-2xl
+                  bg-orange-200/25 dark:bg-orange-900/15"></div>
+
+            <!-- <p class="relative text-xs font-semibold tracking-[.2em] uppercase text-amber-600 dark:text-amber-400 mb-2">
+        Flask Prediction Desk
+      </p> -->
+            <h1
+                class="relative text-center text-4xl sm:text-5xl leading-tight font-semibold text-stone-900 dark:text-stone-50">
+                Wellbeing Reflection Desk
+            </h1>
+            <p class="relative mt-3 max-w-2xl mx-auto text-justify text-stone-600 dark:text-stone-300 leading-relaxed">
+                A thoughtful interface for the local wellbeing model. Enter a journal reflection,
+                submit the form, and the server returns the predicted emotional state, intensity, and confidence.
+            </p>
+
+            <!-- <div class="relative mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div
+                    class="rounded-xl px-4 py-3 border bg-amber-50/80 border-amber-200/60 dark:bg-stone-700/40 dark:border-stone-600/40">
+                    <span class="block text-xs text-stone-400 dark:text-stone-500 mb-1">UI Route</span>
+                    <strong class="font-mono text-sm text-amber-700 dark:text-amber-300">POST /predict</strong>
+                </div>
+                <div
+                    class="rounded-xl px-4 py-3 border bg-amber-50/80 border-amber-200/60 dark:bg-stone-700/40 dark:border-stone-600/40">
+                    <span class="block text-xs text-stone-400 dark:text-stone-500 mb-1">API Route</span>
+                    <strong class="font-mono text-sm text-amber-700 dark:text-amber-300">POST /api/predict</strong>
+                </div>
+                <div
+                    class="rounded-xl px-4 py-3 border bg-amber-50/80 border-amber-200/60 dark:bg-stone-700/40 dark:border-stone-600/40">
+                    <span class="block text-xs text-stone-400 dark:text-stone-500 mb-1">Health</span>
+                    <strong class="font-mono text-sm text-amber-700 dark:text-amber-300">GET /health</strong>
+                </div>
+            </div> -->
+        </section>
+
+        <!-- ══ CONTENT GRID ══ -->
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6">
+
+            <!-- ── FORM PANEL ── -->
+            <section class="rounded-2xl p-7 sm:p-8 border shadow-md
+          bg-white/80 border-stone-200 shadow-stone-900/5
+          dark:bg-stone-900/55 dark:border-stone-700/60 dark:shadow-black/20">
+
+                <h2 class="text-2xl font-semibold text-stone-800 dark:text-amber-50">Reflection Form</h2>
+                <p class="mt-1 text-sm text-stone-400 dark:text-stone-500">
+                    Submit one entry at a time through the same Flask service the API uses.
+                </p>
+
+                {% if error_message %}
+                <div class="mt-5 flex gap-2.5 items-start px-4 py-3 rounded-xl text-sm border
+                    bg-red-50 border-red-200 text-red-700
+                    dark:bg-red-900/20 dark:border-red-800/40 dark:text-red-300">
+                    <svg class="mt-0.5 shrink-0 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 8v4m0 4h.01" />
+                    </svg>
+                    <span><strong>Input issue:</strong> {{ error_message }}</span>
+                </div>
+                {% endif %}
+
+                <form method="post" action="{{ url_for('predict_from_form') }}"
+                    class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+                    <!-- Shared input classes -->
+                    {% set inp = "w-full rounded-xl px-4 py-2.5 text-sm border bg-stone-50 border-stone-200
+                    text-stone-800 placeholder:text-stone-400 dark:bg-stone-800/70 dark:border-stone-700
+                    dark:text-stone-100" %}
+                    {% set lbl = "text-sm font-medium text-stone-600 dark:text-stone-300" %}
+
+                    <!-- Journal text -->
+                    <label class="sm:col-span-2 flex flex-col gap-1.5">
+                        <span class="{{ lbl }}">Journal Text</span>
+                        <textarea id="journal_text" name="journal_text" rows="5" required
+                            placeholder="Write your reflection here…"
+                            class="{{ inp }} leading-relaxed resize-y">{{ form_values.journal_text }}</textarea>
+                    </label>
+
+                    <!-- Ambience Type -->
+                    <label class="flex flex-col gap-1.5">
+                        <span class="{{ lbl }}">Ambience Type</span>
+                        <select id="ambience_type" name="ambience_type" class="{{ inp }}">
+                            {% for o in options.ambience_type %}
+                            <option value="{{ o }}" {% if form_values.ambience_type==o %}selected{% endif %}>{{
+                                o.replace('_',' ').title() }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+
+                    <!-- Time of Day -->
+                    <label class="flex flex-col gap-1.5">
+                        <span class="{{ lbl }}">Time of Day</span>
+                        <select id="time_of_day" name="time_of_day" class="{{ inp }}">
+                            {% for o in options.time_of_day %}
+                            <option value="{{ o }}" {% if form_values.time_of_day==o %}selected{% endif %}>{{
+                                o.replace('_',' ').title() }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+
+                    <!-- Previous Day Mood -->
+                    <label class="flex flex-col gap-1.5">
+                        <span class="{{ lbl }}">Previous Day Mood</span>
+                        <select id="previous_day_mood" name="previous_day_mood" class="{{ inp }}">
+                            {% for o in options.previous_day_mood %}
+                            <option value="{{ o }}" {% if form_values.previous_day_mood==o %}selected{% endif %}>{{
+                                o.replace('_',' ').title() }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+
+                    <!-- Face Emotion Hint -->
+                    <label class="flex flex-col gap-1.5">
+                        <span class="{{ lbl }}">Face Emotion Hint</span>
+                        <select id="face_emotion_hint" name="face_emotion_hint" class="{{ inp }}">
+                            {% for o in options.face_emotion_hint %}
+                            <option value="{{ o }}" {% if form_values.face_emotion_hint==o %}selected{% endif %}>{{
+                                o.replace('_',' ').title() }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+
+                    <!-- Reflection Quality -->
+                    <label class="flex flex-col gap-1.5">
+                        <span class="{{ lbl }}">Reflection Quality</span>
+                        <select id="reflection_quality" name="reflection_quality" class="{{ inp }}">
+                            {% for o in options.reflection_quality %}
+                            <option value="{{ o }}" {% if form_values.reflection_quality==o %}selected{% endif %}>{{
+                                o.replace('_',' ').title() }}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
+
+                    <!-- Duration -->
+                    <label class="flex flex-col gap-1.5">
+                        <span class="{{ lbl }}">Duration (min)</span>
+                        <input id="duration_min" name="duration_min" type="number" min="0" step="1"
+                            value="{{ form_values.duration_min }}" class="{{ inp }}">
+                    </label>
+
+                    <!-- Sleep Hours -->
+                    <label class="flex flex-col gap-1.5">
+                        <span class="{{ lbl }}">Sleep Hours</span>
+                        <input id="sleep_hours" name="sleep_hours" type="number" min="0" max="24" step="0.5"
+                            value="{{ form_values.sleep_hours }}" class="{{ inp }}">
+                    </label>
+
+                    <!-- Energy Level -->
+                    <label class="flex flex-col gap-1.5">
+                        <span class="{{ lbl }}">Energy Level (1–5)</span>
+                        <input id="energy_level" name="energy_level" type="number" min="1" max="5" step="1"
+                            value="{{ form_values.energy_level }}" class="{{ inp }}">
+                    </label>
+
+                    <!-- Stress Level -->
+                    <label class="flex flex-col gap-1.5">
+                        <span class="{{ lbl }}">Stress Level (1–5)</span>
+                        <input id="stress_level" name="stress_level" type="number" min="1" max="5" step="1"
+                            value="{{ form_values.stress_level }}" class="{{ inp }}">
+                    </label>
+
+                    <!-- Submit -->
+                    <div class="sm:col-span-2 pt-2">
+                        <button type="submit" class="px-8 py-3 rounded-full text-sm font-semibold text-white cursor-pointer
+                 bg-gradient-to-b from-stone-700 to-stone-900
+                 hover:from-stone-600 hover:to-stone-800
+                 dark:from-amber-700 dark:to-amber-900 dark:hover:from-amber-600 dark:hover:to-amber-800
+                 shadow-lg shadow-stone-900/15 dark:shadow-black/30
+                 hover:-translate-y-px active:translate-y-0
+                 transition-all duration-150">
+                            Analyze Reflection →
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- ── SIDEBAR ── -->
+            <aside class="flex flex-col gap-5">
+
+                <!-- Prediction ledger -->
+                <div class="rounded-2xl p-6 border shadow-md
+    bg-white/80 border-stone-200 shadow-stone-900/5
+    dark:bg-stone-900/55 dark:border-stone-700/60 dark:shadow-black/20">
+
+                    <h2 class="text-xl font-semibold text-stone-800 dark:text-amber-50">Prediction Ledger</h2>
+                    <p class="mt-1 text-xs text-stone-400 dark:text-stone-500">
+                        Produced by the same trained model the API uses.
+                    </p>
+
+                    {% if prediction %}
+                    <div class="mt-5 divide-y divide-amber-100 dark:divide-stone-700/60">
+
+                        <div class="flex items-center justify-between py-3.5">
+                            <span
+                                class="text-xs uppercase tracking-widest text-stone-400 dark:text-stone-500">State</span>
+                            <strong class="text-sm font-semibold text-stone-900 dark:text-stone-100">
+                                {{ prediction.predicted_state.replace('_',' ').title() }}
+                            </strong>
+                        </div>
+
+                        <div class="flex items-center justify-between py-3.5">
+                            <span
+                                class="text-xs uppercase tracking-widest text-stone-400 dark:text-stone-500">Intensity</span>
+                            <strong class="text-sm font-semibold text-stone-800 dark:text-amber-100">
+                                {{ prediction.predicted_intensity }}
+                            </strong>
+                        </div>
+
+                        <div class="py-3.5">
+                            <div class="flex items-center justify-between mb-2.5">
+                                <span
+                                    class="text-xs uppercase tracking-widest text-stone-400 dark:text-stone-500">Confidence</span>
+                                <strong class="text-sm font-semibold text-amber-600 dark:text-amber-400">
+                                    {{ prediction.confidence_percent }}%
+                                </strong>
+                            </div>
+                            <div class="h-2 w-full rounded-full overflow-hidden bg-stone-200 dark:bg-stone-700">
+                                <div class="h-full rounded-full bg-gradient-to-r from-stone-700 to-amber-700"
+                                    style="width:{{ prediction.confidence_percent }}%"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {% else %}
+                    <div class="mt-5 py-10 flex flex-col items-center gap-3 text-center">
+                        <span class="w-11 h-11 rounded-full grid place-items-center
+                         bg-amber-100/80 dark:bg-stone-700 text-amber-500 dark:text-amber-400">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
+                            </svg>
+                        </span>
+                        <p class="text-sm text-stone-400 dark:text-stone-500">
+                            Submit the form to populate this ledger.
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Sample JSON -->
+                <div class="rounded-2xl p-6 border shadow-md
+                    bg-white/70 border-amber-200/60 shadow-amber-900/6
+                    dark:bg-stone-800/50 dark:border-amber-900/40 dark:shadow-black/25">
+                    <h3 class="text-base font-semibold text-stone-700 dark:text-amber-200 mb-3">Sample API Payload</h3>
+                    <pre class="text-xs leading-relaxed overflow-x-auto rounded-xl p-4
+                      bg-stone-50 border border-amber-100 text-amber-800
+                      dark:bg-stone-900/70 dark:border-stone-700/50 dark:text-amber-300/90"><code>{
+  "journal_text": "I felt more settled
+  after the rain sounds, but work is
+  still tugging at me.",
+  "ambience_type": "rain",
+  "duration_min": 15,
+  "sleep_hours": 6.5,
+  "energy_level": 3,
+  "stress_level": 4,
+  "time_of_day": "evening",
+  "previous_day_mood": "mixed",
+  "face_emotion_hint": "tired_face",
+  "reflection_quality": "clear"
+}</code></pre>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <script>
+        const html = document.documentElement;
+        const btn = document.getElementById('theme-toggle');
+
+        // Apply saved preference or system default on load
+        const saved = localStorage.getItem('theme');
+        const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && systemDark)) {
+            html.classList.add('dark');
+            html.classList.remove('light');
+        }
+
+        btn.addEventListener('click', () => {
+            const dark = html.classList.toggle('dark');
+            html.classList.toggle('light', !dark);
+            localStorage.setItem('theme', dark ? 'dark' : 'light');
+        });
+    </script>
+</body>
+
+</html>
