@@ -1,0 +1,171 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wellbeing Reflection Desk</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='classic.css') }}">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero-panel">
+      <p class="eyebrow">Flask Prediction Desk</p>
+      <h1>Wellbeing Reflection Desk</h1>
+      <p class="lede">
+        A classical front desk for the local wellbeing model. Enter a journal reflection,
+        submit the form, and the server returns the predicted emotional state, intensity,
+        and confidence.
+      </p>
+      <div class="hero-meta">
+        <div class="meta-card">
+          <span class="meta-label">UI Route</span>
+          <strong>POST /predict</strong>
+        </div>
+        <div class="meta-card">
+          <span class="meta-label">API Route</span>
+          <strong>POST /api/predict</strong>
+        </div>
+        <div class="meta-card">
+          <span class="meta-label">Health</span>
+          <strong>GET /health</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel form-panel">
+        <div class="panel-heading">
+          <h2>Reflection Form</h2>
+          <p>Submit one entry at a time through the same Flask service the API uses.</p>
+        </div>
+
+        {% if error_message %}
+        <div class="alert-box">
+          <strong>Input issue:</strong> {{ error_message }}
+        </div>
+        {% endif %}
+
+        <form method="post" action="{{ url_for('predict_from_form') }}" class="reflection-form">
+          <label class="field field-wide" for="journal_text">
+            <span>Journal Text</span>
+            <textarea id="journal_text" name="journal_text" rows="6" required>{{ form_values.journal_text }}</textarea>
+          </label>
+
+          <label class="field" for="ambience_type">
+            <span>Ambience Type</span>
+            <select id="ambience_type" name="ambience_type">
+              {% for option in options.ambience_type %}
+              <option value="{{ option }}" {% if form_values.ambience_type == option %}selected{% endif %}>{{ option.replace('_', ' ').title() }}</option>
+              {% endfor %}
+            </select>
+          </label>
+
+          <label class="field" for="time_of_day">
+            <span>Time Of Day</span>
+            <select id="time_of_day" name="time_of_day">
+              {% for option in options.time_of_day %}
+              <option value="{{ option }}" {% if form_values.time_of_day == option %}selected{% endif %}>{{ option.replace('_', ' ').title() }}</option>
+              {% endfor %}
+            </select>
+          </label>
+
+          <label class="field" for="previous_day_mood">
+            <span>Previous Day Mood</span>
+            <select id="previous_day_mood" name="previous_day_mood">
+              {% for option in options.previous_day_mood %}
+              <option value="{{ option }}" {% if form_values.previous_day_mood == option %}selected{% endif %}>{{ option.replace('_', ' ').title() }}</option>
+              {% endfor %}
+            </select>
+          </label>
+
+          <label class="field" for="face_emotion_hint">
+            <span>Face Emotion Hint</span>
+            <select id="face_emotion_hint" name="face_emotion_hint">
+              {% for option in options.face_emotion_hint %}
+              <option value="{{ option }}" {% if form_values.face_emotion_hint == option %}selected{% endif %}>{{ option.replace('_', ' ').title() }}</option>
+              {% endfor %}
+            </select>
+          </label>
+
+          <label class="field" for="reflection_quality">
+            <span>Reflection Quality</span>
+            <select id="reflection_quality" name="reflection_quality">
+              {% for option in options.reflection_quality %}
+              <option value="{{ option }}" {% if form_values.reflection_quality == option %}selected{% endif %}>{{ option.replace('_', ' ').title() }}</option>
+              {% endfor %}
+            </select>
+          </label>
+
+          <label class="field" for="duration_min">
+            <span>Duration (Minutes)</span>
+            <input id="duration_min" name="duration_min" type="number" min="0" step="1" value="{{ form_values.duration_min }}">
+          </label>
+
+          <label class="field" for="sleep_hours">
+            <span>Sleep Hours</span>
+            <input id="sleep_hours" name="sleep_hours" type="number" min="0" max="24" step="0.5" value="{{ form_values.sleep_hours }}">
+          </label>
+
+          <label class="field" for="energy_level">
+            <span>Energy Level (1-5)</span>
+            <input id="energy_level" name="energy_level" type="number" min="1" max="5" step="1" value="{{ form_values.energy_level }}">
+          </label>
+
+          <label class="field" for="stress_level">
+            <span>Stress Level (1-5)</span>
+            <input id="stress_level" name="stress_level" type="number" min="1" max="5" step="1" value="{{ form_values.stress_level }}">
+          </label>
+
+          <div class="form-actions">
+            <button type="submit">Analyze Reflection</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="panel result-panel">
+        <div class="panel-heading">
+          <h2>Prediction Ledger</h2>
+          <p>The response below is produced by the same trained model used by the API.</p>
+        </div>
+
+        {% if prediction %}
+        <div class="result-card">
+          <div class="result-row">
+            <span class="result-label">Predicted State</span>
+            <strong>{{ prediction.predicted_state.replace('_', ' ').title() }}</strong>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Predicted Intensity</span>
+            <strong>{{ prediction.predicted_intensity }}</strong>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Confidence</span>
+            <strong>{{ prediction.confidence_percent }}%</strong>
+          </div>
+        </div>
+        {% else %}
+        <div class="empty-state">
+          <p>No prediction yet. Submit the form to populate this ledger.</p>
+        </div>
+        {% endif %}
+
+        <div class="api-box">
+          <h3>Sample JSON</h3>
+          <pre>{
+  "journal_text": "I felt more settled after the rain sounds, but work is still tugging at me.",
+  "ambience_type": "rain",
+  "duration_min": 15,
+  "sleep_hours": 6.5,
+  "energy_level": 3,
+  "stress_level": 4,
+  "time_of_day": "evening",
+  "previous_day_mood": "mixed",
+  "face_emotion_hint": "tired_face",
+  "reflection_quality": "clear"
+}</pre>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html> -->
