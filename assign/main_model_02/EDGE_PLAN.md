@@ -19,9 +19,6 @@ Recommended shape:
 
 1. Build a container image for `model_02`
 2. Install dependencies from `requirements.txt`
-3. Expose the Flask app through `gunicorn`
-4. Put it behind Nginx, a load balancer, or a platform ingress
-5. Use `/health` for startup and readiness checks
 
 ### 2. Separate Training from Inference
 
