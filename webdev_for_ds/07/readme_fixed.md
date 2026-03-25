@@ -1,4 +1,3 @@
-
 """
 Real-time Collaborative Whiteboard ✨
 ======================================
@@ -21,7 +20,7 @@ A Flask + SocketIO web app where multiple users can draw together on the same ca
 ```bash
 cd 07
 pip install flask flask-socketio eventlet
-python main.py
+python main.py  # or python main_fixed.py
 ```
 
 Open http://localhost:5000 in multiple tabs/browsers to test collaboration!

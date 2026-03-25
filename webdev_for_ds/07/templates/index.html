@@ -1,0 +1,257 @@
+# ---------------------------
+# HTML + JavaScript template
+# ---------------------------
+HTML_TEMPLATE = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Real‑time Collaborative Whiteboard</title>
+    <!-- Socket.IO client library -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #f0f2f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 20px;
+            width: fit-content;
+            max-width: 95vw;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: crosshair;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            align-items: center;
+        }
+        .tool-group {
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 40px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        label {
+            font-weight: 500;
+            color: #495057;
+        }
+        input[type="color"] {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+        input[type="range"] {
+            width: 120px;
+        }
+        button {
+            background: #dc3545;
+            border: none;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:hover {
+            background: #c82333;
+            transform: scale(1.02);
+        }
+        .status {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
+        @media (max-width: 600px) {
+            .tool-group { padding: 5px 10px; gap: 8px; }
+            input[type="range"] { width: 90px; }
+            button { padding: 6px 15px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <canvas id="whiteboard" width="800" height="500"></canvas>
+
+    <div class="toolbar">
+        <div class="tool-group">
+            <label>Color</label>
+            <input type="color" id="colorPicker" value="#000000">
+        </div>
+        <div class="tool-group">
+            <label>Brush Size</label>
+            <input type="range" id="brushSize" min="1" max="30" value="5">
+            <span id="sizeValue">5</span>
+        </div>
+        <div class="tool-group">
+            <button id="clearBtn">Clear Canvas</button>
+        </div>
+    </div>
+    <div class="status">
+        🖌️ Collaborative drawing — everyone sees your strokes in real‑time
+    </div>
+</div>
+
+<script>
+    // ---------- Canvas setup ----------
+    const canvas = document.getElementById('whiteboard');
+    const ctx = canvas.getContext('2d');
+    
+    // Set initial drawing style
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    let drawing = false;
+    let currentColor = '#000000';
+    let currentSize = 5;
+
+    // DOM elements
+    const colorPicker = document.getElementById('colorPicker');
+    const brushSizeSlider = document.getElementById('brushSize');
+    const sizeSpan = document.getElementById('sizeValue');
+    const clearBtn = document.getElementById('clearBtn');
+
+    // Update brush properties from UI
+    colorPicker.addEventListener('input', (e) => { currentColor = e.target.value; });
+    brushSizeSlider.addEventListener('input', (e) => {
+        currentSize = parseInt(e.target.value);
+        sizeSpan.innerText = currentSize;
+    });
+
+    // ---------- Socket.IO connection ----------
+    const socket = io();  // connects to the same host
+
+    // ---------- Drawing on canvas ----------
+    function startDrawing(e) {
+        drawing = true;
+        const pos = getMousePos(e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.strokeStyle = currentColor;
+        ctx.lineWidth = currentSize;
+        ctx.stroke();
+        // Send initial point (dot) to others
+        sendDrawEvent(pos.x, pos.y, true);
+    }
+
+    function draw(e) {
+        if (!drawing) return;
+        const pos = getMousePos(e);
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+        // Send drawing data to server
+        sendDrawEvent(pos.x, pos.y, false);
+    }
+
+    function stopDrawing() {
+        drawing = false;
+        ctx.beginPath(); // reset path for next stroke
+    }
+
+    // Get canvas relative coordinates
+    function getMousePos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;   // canvas physical vs CSS dimensions
+        const scaleY = canvas.height / rect.height;
+        let clientX, clientY;
+        if (e.touches) {  // touch support
+            clientX = e.touches[0].clientX;
+            clientY = e.touches[0].clientY;
+        } else {
+            clientX = e.clientX;
+            clientY = e.clientY;
+        }
+        let x = (clientX - rect.left) * scaleX;
+        let y = (clientY - rect.top) * scaleY;
+        x = Math.min(Math.max(0, x), canvas.width);
+        y = Math.min(Math.max(0, y), canvas.height);
+        return { x, y };
+    }
+
+    // Send drawing data to server
+    function sendDrawEvent(x, y, isStart) {
+        socket.emit('draw', {
+            x: x,
+            y: y,
+            color: currentColor,
+            size: currentSize,
+            start: isStart
+        });
+    }
+
+    // ---------- Receiving remote drawing events ----------
+    socket.on('draw', (data) => {
+        // Draw the received stroke segment on our canvas
+        ctx.strokeStyle = data.color;
+        ctx.lineWidth = data.size;
+        if (data.start) {
+            ctx.beginPath();
+            ctx.moveTo(data.x, data.y);
+            ctx.lineTo(data.x, data.y);
+            ctx.stroke();
+        } else {
+            ctx.lineTo(data.x, data.y);
+            ctx.stroke();
+        }
+    });
+
+    // ---------- Clear canvas (local + broadcast) ----------
+    function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    clearBtn.addEventListener('click', () => {
+        clearCanvas();          // clear locally immediately
+        socket.emit('clear');   // tell others to clear
+    });
+
+    socket.on('clear', () => {
+        clearCanvas();
+    });
+
+    // ---------- Attach event listeners ----------
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseleave', stopDrawing);
+
+    // Touch events for mobile
+    canvas.addEventListener('touchstart', startDrawing);
+    canvas.addEventListener('touchmove', (e) => { e.preventDefault(); draw(e); });
+    canvas.addEventListener('touchend', stopDrawing);
+    canvas.addEventListener('touchcancel', stopDrawing);
+</script>
+</body>
+</html>
+
+
+# ---------------------------
+# Run the app
+# ---------------------------

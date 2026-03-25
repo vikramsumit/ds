@@ -14,7 +14,6 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 @app.route('/')
 def index():
     """Serve the whiteboard page."""
-    # Inline HTML as a string for self‑contained code
     return render_template('index.html')
 
 # ---------------------------
@@ -23,7 +22,6 @@ def index():
 @socketio.on('draw')
 def handle_draw(data):
     """Broadcast drawing data to all connected clients except the sender."""
-    # Broadcast to all other clients (including sender if we wanted, but we skip)
     emit('draw', data, broadcast=True, include_self=False)
 
 @socketio.on('clear')
@@ -40,3 +38,4 @@ if __name__ == '__main__':
         print("Error:", e)
     except Exception as e:
         print("Error starting server:", e)
+
